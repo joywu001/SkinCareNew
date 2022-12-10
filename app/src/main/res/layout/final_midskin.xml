@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c6b6a5"
+    tools:context=".Final_midSkin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/midPic"
+                android:layout_width="273dp"
+                android:layout_height="209dp"
+                android:src="@drawable/final_mid" />
+
+            <TextView
+                android:id="@+id/mid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:hint="@string/DiscussFinal_Mid"
+                android:textColorHint="#9e6967"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/midInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="@string/Mid_info"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/skin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:hint="@string/SkinFeature"
+                android:textColorHint="#454141"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/midGuild"
+                android:layout_width="200dp"
+                android:layout_height="68dp"
+                android:layout_marginTop="10dp"
+                android:text="肌膚無明顯出油與乾燥不適感毛孔大小適中、油水比例較為均勻。"
+                android:textColorHint="#9A8D7F" />
+
+            <Button
+                android:id="@+id/shop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:onClick="skinMid"
+                android:hint="@string/ProdRecommend"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

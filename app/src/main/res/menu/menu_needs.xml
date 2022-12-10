@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/drySkin"
+            android:title="乾性肌膚" />
+        <item
+            android:id="@+id/midSkin"
+            android:title="中性肌膚" />
+        <item
+            android:id="@+id/mixSkin"
+            android:title="混和性肌膚" />
+        <item
+            android:id="@+id/oilSkin"
+            android:title="油性肌膚" />
+        <item
+            android:id="@+id/allSkin"
+            android:title="全膚質合適" />
+    </group>
+
+</menu>

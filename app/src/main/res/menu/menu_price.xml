@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/cheap"
+            android:title="開價品牌" />
+        <item
+            android:id="@+id/expensive"
+            android:title="專櫃品牌" />
+        <item
+            android:id="@+id/doctor"
+            android:title="醫美品牌"/>
+    </group>
+</menu>

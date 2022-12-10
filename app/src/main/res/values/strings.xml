@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">給你膚膚</string>
+    <string name="edit_message">Enter your name</string>
+    <string name="button_send">Start</string>
+    <string name="SkinDiscuss">膚況檢測</string>
+    <string name="SkinNeeds">肌膚需求</string>
+    <string name="S_function">功能分類</string>
+    <string name="S_brand">品牌總覽</string>
+    <string name="S_price">價格分類</string>
+    <string name="S_process">tips 正確保養程序</string>
+    <string name="S_recommendation">產品推薦</string>
+
+    <string name="SkinDiscuss_q1">自己的臉頰皮膚狀況</string>
+    <string name="SkinDiscuss_a11">經常覺得油</string>
+    <string name="SkinDiscuss_a12">輕度出油、偶爾出油</string>
+    <string name="SkinDiscuss_a13">不易出油且無緊繃感</string>
+    <string name="SkinDiscuss_a14">皮膚較乾燥，無使用面霜易有緊繃感</string>
+
+    <string name="SkinDiscuss_q2">早晨洗臉保養後的一日的臉頰情況</string>
+    <string name="SkinDiscuss_a21">全臉都很油</string>
+    <string name="SkinDiscuss_a22">僅 T 字部位出油</string>
+    <string name="SkinDiscuss_a23">沒有出油也沒有乾燥</string>
+    <string name="SkinDiscuss_a24">皮膚乾燥緊繃</string>
+
+    <string name="SkinDiscuss_q3">若不使用乳液面霜等產品的臉頰狀態</string>
+    <string name="SkinDiscuss_a31">不使用面霜也出油</string>
+    <string name="SkinDiscuss_a32">使用面霜易出油，乳液則還能接受</string>
+    <string name="SkinDiscuss_a33">不油也不乾</string>
+    <string name="SkinDiscuss_a34">不用面霜臉頰感覺乾燥</string>
+
+    <string name="SkinDiscuss_q4">最常遇到的肌膚問題</string>
+    <string name="SkinDiscuss_a41">晚上會比白天出油明顯即暗沉</string>
+    <string name="SkinDiscuss_a42">經常會有嚴重粉刺、痘痘的困擾</string>
+    <string name="SkinDiscuss_a43">細紋困擾，甚至有時候會起皮</string>
+    <string name="SkinDiscuss_a44">沒有以上問題</string>
+
+    <string name="DiscussFinal_Oil">油性肌膚</string>
+    <string name="Oil_info">肌膚表面油膩，皮脂腺機能分泌過於旺盛。</string>
+    <string name="DiscussFinal_Mix">混和性肌膚</string>
+    <string name="Mid_info">油脂與汗水分泌正常、肌膚嬌嫩、細膩有彈性。</string>
+    <string name="DiscussFinal_Mid">中性肌膚</string>
+    <string name="Mix_info">肌膚表面同時存在容易出油又容易乾燥的部位。</string>
+    <string name="DiscussFinal_Dry">乾性肌膚</string>
+    <string name="Dry_info">肌膚表面油脂、水分分泌不足、乾燥失去柔軟性。</string>
+
+    <string name="SkinFeature">皮膚特徵</string>
+    <string name="ProdRecommend">查看適合我的商品</string>
+
+    <string name="nav_drawer_open">開起選單</string>
+    <string name="nav_drawer_close">關閉選單</string>
+
+    <string name="molecule_name">Brand</string>
+
+</resources>

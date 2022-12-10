@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/toner"
+            android:title="化妝水" />
+        <item
+            android:id="@+id/essence"
+            android:title="精華液" />
+        <item
+            android:id="@+id/lotion"
+            android:title="乳液" />
+        <item
+            android:id="@+id/cream"
+            android:title="乳霜" />
+        <item
+            android:id="@+id/eyeCream"
+            android:title="眼霜" />
+        <item
+            android:id="@+id/mask"
+            android:title="面膜" />
+    </group>
+</menu>
