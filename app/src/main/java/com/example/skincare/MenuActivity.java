@@ -29,7 +29,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void skinNeeds(View view) {
-        Intent intent = new Intent(this, Skin_Needs.class);
+        Intent intent = new Intent(this, Display.class);
         startActivity(intent);
     }
 

@@ -34,6 +34,7 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         BrandModel brandModel = items.get(position);
         holder.textView.setText(brandModel.getBrand());
+        holder.textView2.setText(brandModel.getInfo());
         holder.imageView.setImageResource(brandModel.getImage());
     }
 
@@ -45,6 +46,7 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         ImageView imageView;
         TextView textView;
+        TextView textView2;
         View rootView;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -52,6 +54,7 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
             rootView = itemView;
             imageView = itemView.findViewById(R.id.imageView);
             textView = itemView.findViewById(R.id.textView);
+            textView2 = itemView.findViewById(R.id.textView2);
         }
     }
 
