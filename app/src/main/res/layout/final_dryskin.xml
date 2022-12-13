@@ -64,9 +64,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:onClick="skinDry"
             android:hint="@string/ProdRecommend"
+            android:onClick="skinDry"
             android:textSize="20sp" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:onClick="BackHome"
+            android:hint="@string/BackHome"
+            android:textSize="18sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

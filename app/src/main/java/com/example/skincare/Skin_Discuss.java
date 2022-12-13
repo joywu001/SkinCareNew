@@ -85,19 +85,31 @@ public class Skin_Discuss extends AppCompatActivity {
 
     private void checkoutAnswer(int userSelection) {
         if (userSelection == CurrentOptionA) mscore = mscore + 1;
-        if (userSelection == CurrentOptionA) mscore = mscore + 2;
-        if (userSelection == CurrentOptionA) mscore = mscore + 3;
-        if (userSelection == CurrentOptionA) mscore = mscore + 4;
+        if (userSelection == CurrentOptionB) mscore = mscore + 2;
+        if (userSelection == CurrentOptionC) mscore = mscore + 3;
+        if (userSelection == CurrentOptionD) mscore = mscore + 4;
     }
 
     private void updateQuestion() {
         currentIndex = (currentIndex + 1) % questionBank.length;
 
         if (currentIndex == 0) {
-            Intent intent = new Intent(this, Final_drySkin.class);
-            intent.getIntExtra("score",mscore);
-            startActivity(intent);
-            finish();
+            if(mscore<=4) {
+                Intent intent = new Intent(this, Final_drySkin.class);
+                startActivity(intent);
+            }
+            if(mscore>4&&mscore<=8) {
+                Intent intent = new Intent(this, Final_midSkin.class);
+                startActivity(intent);
+            }
+            if(mscore>8&&mscore<=12) {
+                Intent intent = new Intent(this, Final_mixSkin.class);
+                startActivity(intent);
+            }
+            if(mscore>12) {
+                Intent intent = new Intent(this, Final_oilSkin.class);
+                startActivity(intent);
+            }
         }
 
         CurrentQuizPic = questionBank[currentIndex].getQuizpic();

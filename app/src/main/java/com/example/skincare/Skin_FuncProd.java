@@ -8,78 +8,47 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Skin_FuncProd extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Toolbar toolbar;
-
-    @Override
-    public void setSupportActionBar(@Nullable Toolbar toolbar) {
-        super.setSupportActionBar(toolbar);
-    }
-
+public class Skin_FuncProd extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_skin_func_prod);
-
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
-        toolbar = findViewById(R.id.toolbar);
-
-        setSupportActionBar(toolbar);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.nav_drawer_open, R.string.nav_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_f, new Func_toner()).commit();
-            navigationView.setCheckedItem(R.id.toner);
-        }
+        setContentView(R.layout.func_prod);
     }
 
-    @Override
-    public void onBackPressed() {
-
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+    public void func_toner(View view) {
+        Intent intent = new Intent(this, Func_toner.class);
+        startActivity(intent);
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.toner:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_f, new Func_toner()).commit();
-                break;
-            case R.id.essence:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_f, new Func_essence()).commit();
-                break;
-            case R.id.lotion:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_f, new Func_lotion()).commit();
-                break;
-            case R.id.cream:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_f, new Func_cream()).commit();
-                break;
-            case R.id.eyeCream:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_f, new Func_eyeCream()).commit();
-                break;
-            case R.id.mask:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_f, new Func_mask()).commit();
-                break;
-        }
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
+    public void func_essence(View view) {
+        Intent intent = new Intent(this, Func_Essence.class);
+        startActivity(intent);
+    }
+
+    public void func_lotion(View view) {
+        Intent intent = new Intent(this, Func_lotion.class);
+        startActivity(intent);
+    }
+
+    public void func_cream(View view) {
+        Intent intent = new Intent(this, Func_cream.class);
+        startActivity(intent);
+    }
+
+    public void func_eyeCream(View view) {
+        Intent intent = new Intent(this, Func_eyeCream.class);
+        startActivity(intent);
+    }
+
+    public void func_mask(View view) {
+        Intent intent = new Intent(this, Func_mask.class);
+        startActivity(intent);
     }
 }

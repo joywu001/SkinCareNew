@@ -8,8 +8,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -19,70 +21,39 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Skin_Needs extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Toolbar toolbar;
-
-    public Skin_Needs() throws SQLException {
-    }
-
-    @Override
-    public void setSupportActionBar(@Nullable Toolbar toolbar) {
-        super.setSupportActionBar(toolbar);
-    }
+public class Skin_Needs extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_skin_needs);
-
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
-        toolbar = findViewById(R.id.toolbar);
-
-        setSupportActionBar(toolbar);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.nav_drawer_open, R.string.nav_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_n, new Needs_drySkin()).commit();
-            navigationView.setCheckedItem(R.id.drySkin);
-        }
+        setContentView(R.layout.skin_needs);
+    }
+    public void needs_dry(View view) {
+        Intent intent = new Intent(this, Needs_drySkin.class);
+        startActivity(intent);
     }
 
-    @Override
-    public void onBackPressed() {
-
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+    public void needs_mid(View view) {
+        Intent intent = new Intent(this, Needs_midSkin.class);
+        startActivity(intent);
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.drySkin:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_n, new Needs_drySkin()).commit();
-                break;
-            case R.id.midSkin:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_n, new Needs_midSkin()).commit();
-                break;
-            case R.id.mixSkin:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_n, new Needs_mixSkin()).commit();
-                break;
-            case R.id.oilSkin:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_n, new Needs_oilSkin()).commit();
-                break;
-        }
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
+    public void needs_mix(View view) {
+        Intent intent = new Intent(this, Needs_mixSkin.class);
+        startActivity(intent);
+    }
+    public void needs_oil(View view) {
+        Intent intent = new Intent(this, Needs_oilSkin.class);
+        startActivity(intent);
+    }
+
+    public void price_doctor(View view) {
+        Intent intent = new Intent(this, price_doctor.class);
+        startActivity(intent);
+    }
+
+    public void needs_all(View view) {
+        Intent intent = new Intent(this, Needs_all.class);
+        startActivity(intent);
     }
 }

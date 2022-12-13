@@ -45,6 +45,7 @@
 
     <string name="SkinFeature">皮膚特徵</string>
     <string name="ProdRecommend">查看適合我的商品</string>
+    <string name="BackHome">回到主頁</string>
 
     <string name="nav_drawer_open">開起選單</string>
     <string name="nav_drawer_close">關閉選單</string>

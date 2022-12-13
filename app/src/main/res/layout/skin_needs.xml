@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/breidge_2"
+    tools:context=".Skin_Needs">
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/SkinNeeds"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/pricePic"
+            android:layout_width="wrap_content"
+            android:layout_height="325dp"
+            android:src="@drawable/needs" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <Button
+                android:id="@+id/drySkin"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:onClick="needs_dry"
+                android:text="乾性肌膚"
+                android:textColor="#514F4F"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/midSkin"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="15dp"
+                android:onClick="needs_mid"
+                android:text="中性肌膚"
+                android:textColor="#514F4F"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/drySkin"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/mixSkin"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:onClick="needs_mix"
+                android:text="混合性肌膚"
+                android:textColor="#514F4F"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/drySkin" />
+
+            <Button
+                android:id="@+id/oilSkin"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:onClick="needs_oil"
+                android:text="油性肌膚"
+                android:textColor="#514F4F"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/mixSkin"
+                app:layout_constraintTop_toBottomOf="@+id/midSkin" />
+
+            <Button
+                android:id="@+id/mask"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:onClick="func_mask"
+                android:text="面膜"
+                android:textColor="#514F4F"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mixSkin" />
+
+            <Button
+                android:id="@+id/All"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:onClick="needs_all"
+                android:text="全膚質合適"
+                android:textColor="#514F4F"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/mask"
+                app:layout_constraintTop_toBottomOf="@+id/oilSkin" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

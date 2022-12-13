@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/breidge_2"
+    tools:context=".Skin_PriceProd">
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="價格商品選單"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/pricePic"
+            android:layout_width="wrap_content"
+            android:layout_height="325dp"
+            android:src="@drawable/price"
+            android:layout_marginTop="14dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/cheap"
+                android:layout_width="100dp"
+                android:layout_height="55dp"
+                android:onClick="price_cheap"
+                android:text="開價"
+                android:textColor="#514F4F"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/doctor"
+                android:layout_width="100dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="10dp"
+                android:onClick="price_doctor"
+                android:text="醫美"
+                android:textColor="#514F4F"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/cheap"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/expensive"
+                android:layout_width="100dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="10dp"
+                android:onClick="price_expensive"
+                android:text="專櫃"
+                android:textColor="#514F4F"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/doctor"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

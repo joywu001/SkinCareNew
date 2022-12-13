@@ -18,4 +18,8 @@ public class Final_drySkin extends AppCompatActivity {
         Intent intent = new Intent(this, Needs_drySkin.class);
         startActivity(intent);
     }
+    public void BackHome(View view) {
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
+    }
 }

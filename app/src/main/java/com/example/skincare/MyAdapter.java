@@ -34,9 +34,11 @@ public class MyAdapter extends ArrayAdapter<Product> {
 
         TextView prodName = view.findViewById(R.id.txt_name);
         TextView prodBrand = view.findViewById(R.id.txt_brand);
+        TextView prodPrice = view.findViewById(R.id.txt_price);
 
         prodName.setText(arrayListProduct.get(position).getName());
         prodBrand.setText(arrayListProduct.get(position).getBrand());
+        prodPrice.setText(arrayListProduct.get(position).getPrice());
 
         return super.getView(position, convertView, parent);
     }

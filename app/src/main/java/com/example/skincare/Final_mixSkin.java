@@ -17,4 +17,8 @@ public class Final_mixSkin extends AppCompatActivity {
         Intent intent = new Intent(this, Needs_mixSkin.class);
         startActivity(intent);
     }
+    public void BackHome(View view) {
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
+    }
 }
