@@ -1,13 +1,12 @@
 package com.example.skincare;
 
 public class Product {
-    private String name, brand, price, positioning;
+    private String name, brand, price;
 
-    public Product(String name, String brand, String price, String positioning) {
+    public Product(String name, String brand, String price) {
         this.name = name;
         this.brand = brand;
         this.price = price;
-        this.positioning = positioning;
     }
 
     public String getName() {
@@ -22,10 +21,6 @@ public class Product {
         return price;
     }
 
-    public String getPositioning() {
-        return positioning;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -38,7 +33,4 @@ public class Product {
         this.price = price;
     }
 
-    public void setPositioning(String positioning) {
-        this.positioning = positioning;
-    }
-}
+   }
