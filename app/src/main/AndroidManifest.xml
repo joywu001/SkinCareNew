@@ -16,14 +16,6 @@
         android:theme="@style/Theme.SkinCare"
         tools:targetApi="31">
         <activity
-            android:name=".Needs_all"
-            android:exported="false"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Needs_oilSkin"
             android:exported="false"
             android:screenOrientation="portrait">

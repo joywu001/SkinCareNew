@@ -1,8 +1,12 @@
 package com.example.skincare;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
@@ -22,105 +26,88 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class price_cheap extends AppCompatActivity implements ListView.OnItemClickListener{
-
-    private RequestQueue objqueue;
-    private final static String strurl = "";
-    private ListView list;
-    ArrayList<Product> arrayskin;
-    private StringRequest getRequest;
-    MyAdapter adapter;
+public class price_cheap extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    ArrayList<ProductModel> arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.price_cheap);
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
 
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        //物件名稱跟Layout上的物件，產生連結。
-        list = (ListView) findViewById(R.id.list);
-        list.setOnItemClickListener(this);
+        arrayList = new ArrayList<ProductModel>();
 
-        arrayskin=new ArrayList<>();
-        list.setAdapter(adapter);
+        JsonFetchCh jsonFetchCh = new JsonFetchCh();
+        jsonFetchCh.execute();
+    }
 
-        //設定Volley物件。
+    public class JsonFetchCh extends AsyncTask<String, String, String> {
 
-        objqueue = Volley.newRequestQueue(this);
+        HttpURLConnection httpURLConnection = null;
+        String mainfile;
+        BufferedReader bufferedReader = null;
 
-        //實做Volley物件，在StringRequest的函式，預設值就是Request.Method.GET，可以省略。
-        //而strurl，就是要GET的API網址。
-        //最後，還要Override二個監聽的事件。
-        getRequest = new StringRequest(strurl, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                //response，表示是回傳值，就是API要回傳的字串，也可以是JSON字串。
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                URL url = new URL("http://140.136.151.160/testget.php");
+                httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.connect();
 
-                //宣告JSONArray時，要用try...catch包起來，不然會出現錯誤。
-                try{
-                    //將JSON字串，放到JSONArray中。
-                    JSONArray array = new JSONArray(response);
+                InputStream inputStream = httpURLConnection.getInputStream();
+                bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                StringBuffer stringBuffer = new StringBuffer();
+                String line = "";
 
-                    //解出JSON的資料，將所要的資料，再寫入陣列中。
-                    for (int i = 0; i < array.length(); i++) {
+                while ((line = bufferedReader.readLine()) != null) {
+                    JSONArray parent = new JSONArray(line);
 
-                        JSONObject jsonObject = array.getJSONObject(i);
-                        String prodName = jsonObject.getString("name");
-                        String prodBrand= jsonObject.getString("price");
-                        String link =  jsonObject.getString("link");
+                    int i = 0;
 
+                    while (i <= parent.length()) {
 
+                        JSONObject child = parent.getJSONObject(i);
+
+                        String name = child.getString("name");
+                        String price = child.getString("price");
+                        String link = child.getString("link");
+
+                        arrayList.add(new ProductModel(name, price, link));
+
+                        i++;
                     }
                 }
-                catch(JSONException e) {
-                    e.printStackTrace();
-                }
+                inputStream.close();
 
-                //將陣列跟Spinner物件連結在一起。
-                list.setAdapter(new ArrayAdapter<Product>( price_cheap.this, android.R.layout.simple_spinner_dropdown_item, arrayskin));
-
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //如果發生錯誤，就是回傳VolleyError，可以顯示是什麼錯誤。
-            }
-        });
 
-        //將getRequest物件加入Volley物件的queue中，執行跟API的溝通。
-        objqueue.add(getRequest);
+            return null;
+        }
 
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            final Adapter adapter = new Adapter(arrayList);
+            recyclerView.setAdapter(adapter);
+        }
     }
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-        //取得按下ListView的那個Item的值。
-        String strbookname = adapterView.getItemAtPosition(i).toString();
-
-        //按下Item時，要呼叫編輯的Activity，利用Intent物件帶參數過去。
-        Intent it = new Intent();
-        it= new Intent(this,price_cheap.class);
-
-        it.putExtra("pname",strbookname);
-
-        startActivity(it);
-
-        //關閉本身的Activity。
-        this.finish();
-
-    }
-    //顯示訊息
-    public void textview(String strmessage)
-    {
-        Toast objtoast = Toast.makeText(this,strmessage, Toast.LENGTH_SHORT);
-        objtoast.show();
-    }
 }

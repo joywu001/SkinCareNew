@@ -83,31 +83,6 @@
                 app:layout_constraintStart_toEndOf="@+id/mixSkin"
                 app:layout_constraintTop_toBottomOf="@+id/midSkin" />
 
-            <Button
-                android:id="@+id/mask"
-                android:layout_width="150dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="10dp"
-                android:onClick="func_mask"
-                android:text="面膜"
-                android:textColor="#514F4F"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mixSkin" />
-
-            <Button
-                android:id="@+id/All"
-                android:layout_width="150dp"
-                android:layout_height="55dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:onClick="needs_all"
-                android:text="全膚質合適"
-                android:textColor="#514F4F"
-                android:textSize="18sp"
-                app:layout_constraintStart_toEndOf="@+id/mask"
-                app:layout_constraintTop_toBottomOf="@+id/oilSkin" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>

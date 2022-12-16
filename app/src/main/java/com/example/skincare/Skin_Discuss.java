@@ -84,10 +84,10 @@ public class Skin_Discuss extends AppCompatActivity {
     }
 
     private void checkoutAnswer(int userSelection) {
-        if (userSelection == CurrentOptionA) mscore = mscore + 1;
-        if (userSelection == CurrentOptionB) mscore = mscore + 2;
-        if (userSelection == CurrentOptionC) mscore = mscore + 3;
-        if (userSelection == CurrentOptionD) mscore = mscore + 4;
+        if (userSelection == CurrentOptionA) mscore = mscore + 4;
+        if (userSelection == CurrentOptionB) mscore = mscore + 3;
+        if (userSelection == CurrentOptionC) mscore = mscore + 2;
+        if (userSelection == CurrentOptionD) mscore = mscore + 1;
     }
 
     private void updateQuestion() {
@@ -95,18 +95,22 @@ public class Skin_Discuss extends AppCompatActivity {
 
         if (currentIndex == 0) {
             if(mscore<=4) {
+                mscore=0;
                 Intent intent = new Intent(this, Final_drySkin.class);
                 startActivity(intent);
             }
             if(mscore>4&&mscore<=8) {
+                mscore=0;
                 Intent intent = new Intent(this, Final_midSkin.class);
                 startActivity(intent);
             }
             if(mscore>8&&mscore<=12) {
+                mscore=0;
                 Intent intent = new Intent(this, Final_mixSkin.class);
                 startActivity(intent);
             }
             if(mscore>12) {
+                mscore=0;
                 Intent intent = new Intent(this, Final_oilSkin.class);
                 startActivity(intent);
             }

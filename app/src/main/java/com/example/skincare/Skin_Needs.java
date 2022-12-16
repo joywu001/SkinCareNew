@@ -52,8 +52,4 @@ public class Skin_Needs extends AppCompatActivity{
         startActivity(intent);
     }
 
-    public void needs_all(View view) {
-        Intent intent = new Intent(this, Needs_all.class);
-        startActivity(intent);
-    }
 }
